@@ -6,11 +6,11 @@
 
 ### Introduction
 
-The work here displayed, shows how to train an DQN-based agent to navigate the banana environment in a large, square world.  
+The work here displayed, shows how to train a DQN-based agent to play a game in a large, square world.  The aim is to collect as many yellow bananas as possible, while avoiding the blue bananas.
 
 ![Trained Agent][image1]
 
-A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana.  Thus, the goal of the agent is to collect as many yellow bananas as possible while avoiding blue bananas.  
+A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana.  
 
 The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction.  Given this information, the agent has to learn how to best select actions.  Four discrete actions are available, corresponding to:
 - **`0`** - move forward.
@@ -18,7 +18,7 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 - **`2`** - turn left.
 - **`3`** - turn right.
 
-The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
+The task is episodic, and in order to solve the environment, an agent must get an average score of +13 over 100 consecutive episodes.
 
 ### Getting Started
 
@@ -32,12 +32,12 @@ The task is episodic, and in order to solve the environment, your agent must get
 
     (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux_NoVis.zip) to obtain the environment.
 
-2. Place the file in the direcotry where you are running the python notebook.
+2. Place the file in the directory where you are running the python notebook.
 
 ### Instructions
 
 Although one can quickly get the agent to train by following the steps on `Navigation.ipynb`, it is important to note that when loading the agent (line "from model import Agent"):
-1. The agent is dependent on the replay buffer class and on the Qnetwork from the network module.
-2. The neural network architecture is implemented on the Qnetwork class, but its optimization is carried in the agent class.
+1. The agent depends on the replay buffer class and on the Qnetwork from the network module.
+2. The neural network architecture is implemented in the Qnetwork class, but its optimisation is carried in the agent class.
 
 
