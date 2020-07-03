@@ -70,7 +70,7 @@ An example of the appearance of the environment is given below.
 
 I used jupyterlab, which supports multi-tab editing, and includes a markdown preview function, useful for readme editing. You can install it using the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html).
 
-5. Create an IPython kernel for the drlnd environment.
+6. Create an IPython kernel for the drlnd environment.
 python -m ipykernel install --user --name drlnd --display-name "deep rl (torch)"
 Before running code in a notebook, change the kernel to match the "deep rl (torch)" environment by using the drop-down Kernel menu.
 
