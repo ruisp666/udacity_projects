@@ -31,12 +31,12 @@ While we will not go into a complete description of the algorithm, we will comme
 
 #### 2.1 The Q-value function estimator
 
-In order to estimate the Q-Value function, I have use a neural network with 32 hidden layers, with input sizes of 64, 128, and 64 respectively, all with relu gates. The output layer took a softmax gate with 4 units, the dimension of the action space. Please refer to _model.py_ for implementation details. The number of layers and units used was inspired from the hyperparameters that I chose for a neural network that I implemented in the Self Driving Car Nanodegree for Behavioural cloning.
-In the present case, however, instead of convolution layers and filters,  I used linear layers and units.
-It is important to note that although the agent makes use of two instances of this network, only one is optimised, namely the local. This was done by means of an Adam optimiser with a learning rate of 4e-5, in batches of 64, as used in the lesson implementation.
+In order to estimate the Q-Value function, I used a neural network with 32 hidden layers, with input sizes of 64, 128, and 64 respectively. All the hidden layers made use of relu gates. The output layer took a softmax gate with 4 units, equivalent to the dimension of the action space. Please refer to _model.py_ for implementation details. The number of layers and units used was inspired from the hyperparameters that I chose for a neural network that implemented in the Self Driving Car Nanodegree, for Behavioural cloning.
+In the present case, however, instead of convolution layers and filters, I used linear layers and units.
+It is important to note that although the agent makes use of two instances of this network, only one is optimised, namely the local network. This was carried by means of an Adam optimiser with a learning rate of 4e-5, in batches of 64, as used in the DQN lesson implementation.
 ### 3. Performance
 
-The objective of this exercise was to attain an average score of 13 over 100 episodes. As can be seen by the attached notebook, that threshold was attained after 369 episodes.
+The objective of this exercise was to attain an average score of 13 over 100 episodes. As can be seen by the attached notebook, that threshold was attained after 369 episodes. Below, one can see the learning process taking place across episodes.
 
 ![Scores][image2]
 
@@ -44,4 +44,5 @@ The objective of this exercise was to attain an average score of 13 over 100 epi
 
 ### 4 Future improvements
 
-An improvement could be to clip the loss error to add stability to the learning process, or use prioritised experience replay to make the learning process more efficient by selecting those instances that were more singificant to learning. We could also have used actor critic methods to improve learning performance (i.e. the agent's average score per episode ). This procedure uses one local-target pair of networks to approximate the q-value function, and another pair of networks to approximate the policy. The optimization is then carried both on the local q-value network, and on the local policy network.
+An improvement could be to clip the loss error to add stability to the learning process by avoiding explosive gradients, or use prioritised experience replay to make the learning process more efficient by selecting those instances more singificant to learning. 
+We could also have used actor critic methods to improve learning performance (i.e. the agent's average score per episode ). This procedure uses one local-target pair of networks to approximate the q-value function, and another similarly structured pair of networks to approximate the policy. The optimization is then carried both on the local q-value network, and on the local policy network.
