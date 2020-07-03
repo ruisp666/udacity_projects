@@ -2,23 +2,36 @@
 
 [image1]: https://user-images.githubusercontent.com/10624937/42135619-d90f2f28-7d12-11e8-8823-82b970a54d7e.gif "Trained Agent"
 
+[image2]: change_kernel_jupyter_lab.png "Change Kernel"
+
 # Project 1: Navigation
 
 ### Introduction
 
 The work here displayed, shows how to train a DQN-based agent to play a game in a large, square world.  The aim is to collect as many yellow bananas as possible, while avoiding the blue bananas.
 
+
+
+### Environment details
+An example of the appearance of the environment is given below.
+
 ![Trained Agent][image1]
 
-A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana.  
+**Multi/Single agent**: Single agent.
 
-The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction.  Given this information, the agent has to learn how to best select actions.  Four discrete actions are available, corresponding to:
+**Rewards**: A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana.  
+
+**State Space**: The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction.  Given this information, the agent has to learn how to best select actions.  
+
+**Actions**:Four discrete actions are available, corresponding to:
 - **`0`** - move forward.
 - **`1`** - move backward.
 - **`2`** - turn left.
 - **`3`** - turn right.
 
-The task is episodic, and in order to solve the environment, an agent must get an average score of +13 over 100 consecutive episodes.
+   They are represented by a vector of size 4.
+
+**Success criteria**: The task is episodic, and in order to solve the environment, an agent must get an average score of +13 over 100 consecutive episodes.
 
 ### Getting Started
 
@@ -34,10 +47,37 @@ The task is episodic, and in order to solve the environment, an agent must get a
 
 2. Place the file in the directory where you are running the python notebook.
 
+3. Create (and activate) a new environment with Python 3.6. Install [anaconda](https://docs.anaconda.com/anaconda/install/) in order to create the python environment needed using conda.
+
+    #### Linux or Mac:
+    conda create --name drlnd python=3.6
+    source activate drlnd
+    #### Windows:
+    conda create --name drlnd python=3.6 
+    activate drlnd
+
+4. Clone the repository (if you haven't already!), and navigate to the python/ folder. Then, install several dependencies.
+
+    git clone https://github.com/udacity/deep-reinforcement-learning.git
+    cd deep-reinforcement-learning/python
+    pip install .
+    
+5. (optional) Install jupyterlab
+
+I used , which supports multi-tab editing, and includes a markdown preview function, useful for readme editing. You can install it using the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html).
+
+5. Create an IPython kernel for the drlnd environment.
+python -m ipykernel install --user --name drlnd --display-name "deep rl (torch)"
+Before running code in a notebook, change the kernel to match the "deep rl (torch)" environment by using the drop-down Kernel menu.
+
+![Kernel change][image2]
+
+
 ### Instructions
 
 Although one can quickly get the agent to train by following the steps on `Navigation.ipynb`, it is important to note that when loading the agent (line "from model import Agent"):
 1. The agent depends on the replay buffer class and on the Qnetwork from the network module.
-2. The neural network architecture is implemented in the Qnetwork class, but its optimisation is carried in the agent class.
+2. The neural network architecture is implemented in the Qnetwork class, but its optimisation is carried in the agent class. The optimized weights are saved in __working_model.pth__.
+
 
 
