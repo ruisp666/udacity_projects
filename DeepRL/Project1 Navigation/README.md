@@ -51,20 +51,24 @@ An example of the appearance of the environment is given below.
 
     #### Linux or Mac:
     conda create --name drlnd python=3.6
+    
     source activate drlnd
     #### Windows:
     conda create --name drlnd python=3.6 
+    
     activate drlnd
 
-4. Clone the repository (if you haven't already!), and navigate to the python/ folder. Then, install several dependencies.
+4. Clone the udacity deep reinforcment learning repository and navigate to the python/ folder. Then, install several dependencies.
 
     git clone https://github.com/udacity/deep-reinforcement-learning.git
+    
     cd deep-reinforcement-learning/python
+    
     pip install .
     
 5. (optional) Install jupyterlab
 
-I used , which supports multi-tab editing, and includes a markdown preview function, useful for readme editing. You can install it using the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html).
+I used jupyterlab, which supports multi-tab editing, and includes a markdown preview function, useful for readme editing. You can install it using the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html).
 
 5. Create an IPython kernel for the drlnd environment.
 python -m ipykernel install --user --name drlnd --display-name "deep rl (torch)"
@@ -75,7 +79,7 @@ Before running code in a notebook, change the kernel to match the "deep rl (torc
 
 ### Instructions
 
-Although one can quickly get the agent to train by following the steps on `Navigation.ipynb`, it is important to note that when loading the agent (line "from model import Agent"):
+Although one can quickly get the agent to train by following the steps on `Navigation.ipynb` (use cell 7 to train the agent, and cell 26 to make the trained agent play the gam), it is important to note that when loading the agent (line "from model import Agent"):
 1. The agent depends on the replay buffer class and on the Qnetwork from the network module.
 2. The neural network architecture is implemented in the Qnetwork class, but its optimisation is carried in the agent class. The optimized weights are saved in __working_model.pth__.
 
