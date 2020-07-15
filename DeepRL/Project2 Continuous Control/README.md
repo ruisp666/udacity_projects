@@ -1,6 +1,6 @@
 [//]: # (Image References)
 
-[image1]: https://user-images.githubusercontent.com/10624937/43851024-320ba930-9aff-11e8-8493-ee547c6af349.gif "Trained Agent"
+[image1]:  img/agent_at_score_30.gif
 [image2]: ../Project1%20Navigation/change_kernel_jupyter_lab.png
 
 
@@ -14,7 +14,7 @@ For this project, we will use the [Reacher](https://github.com/Unity-Technologie
 
 
 ### Environment details
-An example of the appearance of the environment is given below.
+An example of the appearance of the environment while training is given below.
 
 ![Trained Agent][image1]
 
@@ -97,6 +97,8 @@ Although one can quickly get the agent to train by following the steps on `Conti
  - The actor and critic networks located in ddpg_gen_agent.py.
 2. The two neural networks architecture are implemented in the ActorCritic.py module, but their optimisation is carried in the 
 agent class. The optimized weights are saved in trained_networks.
+
+You can see a partial log of the experiments attempted in __log_trials.csv__.
 
 
 

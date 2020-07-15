@@ -6,8 +6,10 @@
 [image4]: img/Scores_attempt_10_at_300.jpg
 [image6]: img/Scores_attempt_14_at_500.jpg
 [image7]: img/Scores_attempt_14.2_at_500.jpg
-[image7]: img/Scores_attempt_16_at_900.jpg
+[image7]: img/Scores_attempt_16_at_900.jpg 
 [image8]: img/Scores_attempt_18_at_375.jpg
+[image9]: img/Scores_attempt_25_at_300.jpg
+[image10]: img/agent_at_score_30.gif
 
 
 # A generalized Deep Deterministic Policy Gradient for tracking movable objects
@@ -80,8 +82,9 @@ The agent was based on my implementation of the DQN agent, with the following ad
 - Only the local networks are optimized, both with ADAM, as per the authors suggestion.
 - The agent supports non-continuous learning.
 - The learning algorithm ('learn' method) was directly implemented from the DDPG paper from scratch.
+- The norm of the gradient of the critic was clipped.
 
-### 3. Tuning
+### 4. Tuning
 Finding the optimal parameters proved to be quite tricky. Not only there are a large number of parameters to tune, but
 also a particular combination of parameters may need to be retested in order to get an accurate assessment of the
 performance. Interestingly enough, many times **early indicators of performance were not informative of future performance**.
@@ -129,14 +132,14 @@ However, there are several occurrences of low scores (5-10) which are pushing th
 
 The maximum average score jumped to 19.2 at episode 900.
 
-## 3.1 Reaching 30
+### 4.1 Reaching 30
  
 Given the results of attempt 16, I have decided to increase the learning rate of the actor to 5e-4 and augment the buffer
 size to 500k. Finally, we arrived at a 100-episode average of 30.07 after 375 episodes!
 
  
   
-![Scores for attempt 18][image7]
+![Scores for attempt 18][image8]
 
 The learning progress was fast enough that we can see the episode score sits quite frequently above the average
 , which is in technical parlance terms, a very bullish signal. To recap, the parameters used were:
@@ -144,13 +147,26 @@ The learning progress was fast enough that we can see the episode score sits qui
 - Networks: 3 hidden layers with 128, 256 and 128 units respectively.
 - Weight initialization: As per the DDPG paper.
 - Batch size: 128.
+- Gamma: 0.99.
 - Learning frequency: 5 times every 30 steps.
 - Learning rates: 1e-3 for the critic and 5e-4 for the actor.
 - Buffer size: 500000.
 
+### 4.2 Reaching 31
 
+For my final experiment,  I decided to find the maximum  average score over a particular run,
+ using the same parameters as in 3.1. I split the experiment in half in cells 8 and 9 of the notebook, and below you can 
+ find the scores from episodes 700 to 1000.
 
-### 4. Future improvements
+![Scores for attempt 25][image9]
+
+ The maximum achieved was 31.0, at episode 902. The network parameters are saved as checkpoint_critic_max and checkpoint_actor_max. 
+ A gif taken when the score was averaging 30.5 follows.
+ 
+![Scoring above 30][image10]
+
+### 5. Future improvements
 
 An improvement could be to tune the use of batch normalization to achieve better performance.  We could have also used
-prioritized experience replay to add stability.
+prioritized experience replay to add stability and make the learning process more efficient by selecting those instances
+ more significant to learning, or make the architectures of the critic and actor different.
