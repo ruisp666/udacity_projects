@@ -91,8 +91,10 @@ Before running code in a notebook, change the kernel to match the "deep rl (torc
 ### Instructions
 Although one can quickly get the agent to train by following the steps on `Continuous_Control.ipynb` (use cell 7 to
  train the agent, and cell 26 to make the trained agent play the game), it is important to note that when loading the
-  agent (line "from model import ddpgAgent"):
-1. The agent depends on the replay buffer class and on the ActorNetwork and CriticNetwork from the network module.
+  agent (line "from ddpg_mod import Agent"):
+1. The agent depends on :
+ - replay buffer and noise classes located in utils.py.
+ - The actor and critic networks located in ddpg_gen_agent.py.
 2. The two neural networks architecture are implemented in the ActorCritic.py module, but their optimisation is carried in the 
 agent class. The optimized weights are saved in trained_networks.
 
