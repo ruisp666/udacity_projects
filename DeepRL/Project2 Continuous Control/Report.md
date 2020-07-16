@@ -4,8 +4,8 @@
 [image2]: img/Scores_attempt_1.jpg
 [image3]: img/Scores_attempt_2.jpg
 [image4]: img/Scores_attempt_10_at_300.jpg
-[image6]: img/Scores_attempt_14_at_500.jpg
-[image7]: img/Scores_attempt_14.2_at_500.jpg
+[image5]: img/Scores_attempt_14_at_500.jpg
+[image6]: img/Scores_attempt_14.2_at_500.jpg
 [image7]: img/Scores_attempt_16_at_900.jpg 
 [image8]: img/Scores_attempt_18_at_375.jpg
 [image9]: img/Scores_attempt_25_at_300.jpg
