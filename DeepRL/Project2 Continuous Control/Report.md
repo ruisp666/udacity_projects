@@ -31,6 +31,7 @@ For more details on the environment or  how to install it, please refer to the R
 
     
 ![Trained agent][image1]
+
 An example of the training environment, with the agent averaging a score of 17.5.
 
 ### 2. Learning Algorithm
