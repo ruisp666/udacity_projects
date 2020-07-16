@@ -165,8 +165,11 @@ For my final experiment,  I decided to find the maximum  average score over a pa
  
 ![Scoring above 30][image10]
 
-### 5. Future improvements
+### 5. Future work
 
 An improvement could be to tune the use of batch normalization to achieve better performance.  We could have also used
 prioritized experience replay to add stability and make the learning process more efficient by selecting those instances
- more significant to learning, or make the architectures of the critic and actor different.
+ more significant to learning, or make the architectures of the critic and actor different. Finally, we could have used
+ Trust Region Policy Optimization, which, by constraining the 
+ distribution of policy with the help of an additional parameter, was shown to offer improvements in learning stability,
+ resulting in better performance, when compared with DDPG.
