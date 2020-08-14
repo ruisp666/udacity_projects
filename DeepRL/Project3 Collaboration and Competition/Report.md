@@ -82,7 +82,7 @@ performance. Interestingly enough, and similar to single agent DDPG, many times 
 ![Agent performance over 5500 episodes][image1]
 
 The parameters used were:
-- Noise: Standard deviation of 0.2 , expectation of 0, and theta of 0.15, using a standard normal distribution as noise generator.
+- Noise: Standard deviation of 0.2 , expectation of 0, and theta of 0.15, using a standard normal distribution as noise generator. A further 0.99 decay factor was used in each episode.
 - Networks: 3 hidden layers with 128, 256 and 128 units respectively.
 - Weight initialization: As per the DDPG paper.
 - Batch size: 256, after trying 1024, and 512
@@ -91,7 +91,7 @@ The parameters used were:
 - Learning frequency: 5 times every 15 steps.
 - Learning rates: 1e-3 for the critic and 5e-4 for the actor.
 - Buffer size: 1000000.
-- For first 20 epsiodes
+- The first 20 episodes were used to collect samples based on random actions.
 
 
 ## 5. Future work
