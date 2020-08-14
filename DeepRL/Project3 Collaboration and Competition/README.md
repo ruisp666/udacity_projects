@@ -35,7 +35,37 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
     (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux_NoVis.zip) to obtain the "headless" version of the environment.  You will **not** be able to watch the agent without enabling a virtual screen, but you will be able to train the agent.  (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
 
-2. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/` folder, and unzip (or decompress) the file. 
+2. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/` folder, and unzip (or decompress) the file in the directory your notebook is.
+
+
+3. Create (and activate) a new environment with Python 3.6. Install [anaconda](https://docs.anaconda.com/anaconda/install/) in order to create the python environment needed using conda.
+
+    #### Linux or Mac:
+    conda create --name drlnd python=3.6
+    
+    source activate drlnd
+    #### Windows:
+    conda create --name drlnd python=3.6 
+    
+    activate drlnd
+
+4. Clone the udacity deep reinforcment learning repository and navigate to the python/ folder. Then, install several dependencies.
+
+    git clone https://github.com/udacity/deep-reinforcement-learning.git
+    
+    cd deep-reinforcement-learning/python
+    
+    pip install .
+    
+5. (optional) Install jupyterlab
+
+I used jupyterlab, which supports multi-tab editing, and includes a markdown preview function, useful for readme editing. You can install it using the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html).
+
+6. Create an IPython kernel for the drlnd environment.
+python -m ipykernel install --user --name drlnd --display-name "deep rl (torch)"
+Before running code in a notebook, change the kernel to match the "deep rl (torch)" environment by using the drop-down Kernel menu.
+
+![Kernel change][image2]
 
 ### Instructions
 
