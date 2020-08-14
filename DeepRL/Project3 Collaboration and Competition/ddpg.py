@@ -15,6 +15,9 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # A modified ddpg agent, sharing a replay buffer across a list of agents
 class Agent():
+    """
+    Instantiate an Agent object.
+    """
     def __init__(self, state_size, action_size, seed, n_agents=2):
         """Initialize an Agent object.
 
@@ -50,6 +53,7 @@ class Agent():
         Params
         ======
             state (array_like): current state
+            eps: The multiplier for epsilon decay
         """
         state = torch.from_numpy(state).float().unsqueeze(0).to(device)
         # Change the network to evaluation mode

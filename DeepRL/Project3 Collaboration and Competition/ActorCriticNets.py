@@ -4,6 +4,12 @@ import torch.nn.functional as F
 import numpy as np
 
 def fan_in_dim(layer):
+    """
+    Returns the fan in dimensions of the layer
+    PARAMS
+    =====
+    layer: The layer of the network
+    """
     return layer.weight.data.size()[0]
 
 class ActorNetwork(nn.Module):
@@ -21,7 +27,7 @@ class ActorNetwork(nn.Module):
         self.dense2_units = 256
         self.dense3_units = 128
         super(ActorNetwork, self).__init__()
-        self.seed = torch.manual_seed(seed)
+        self.seed = seed
         
         # First layer architecture and initialization scheme
         self.dense1 = nn.Linear(state_size, self.dense1_units)
@@ -75,7 +81,7 @@ class CriticNetwork(nn.Module):
         self.dense2_units = 256
         self.dense3_units = 128
         super(CriticNetwork, self).__init__()
-        self.seed = torch.manual_seed(seed)
+        self.seed = seed
         
         # First layer architecture and initialization scheme
         self.dense1 = nn.Linear(state_size, self.dense1_units)

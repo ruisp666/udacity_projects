@@ -25,10 +25,18 @@ class ReplayBuffer:
         self.memory = deque(maxlen=buffer_size)  
         self.batch_size = batch_size
         self.experience = namedtuple("Experience", field_names=["state", "action", "reward", "next_state", "done"])
-        self.seed = random.seed(seed)
+        random.seed(seed)
     
     def add(self, state, action, reward, next_state, done):
-        """Add a new experience to memory."""
+        """Add a new single experience to memory.
+         Params
+        ======
+            state : the state array
+            action: the action array
+            reward: the reward array
+            next_state: the array with the next states
+            done: the array with the dones
+        """
         e = self.experience(state, action, reward, next_state, done)
         self.memory.append(e)
     
@@ -57,11 +65,18 @@ class OUNoise:
     """Ornstein-Uhlenbeck process."""
 
     def __init__(self, size, seed, mu=0., theta=0.15, sigma=0.3):
-        """Initialize parameters and noise process."""
+        """Initialize parameters and noise process.
+        PARAMS
+        =====
+        size: The dimension of the noise process
+        mu: the drift of the stochastic process 
+        theta: The multiplier of the deterministic part of the stochastic process
+        sigma: The 
+        """
         self.mu = mu * np.ones(size)
         self.theta = theta
         self.sigma = sigma
-        self.seed = random.seed(seed)
+        random.seed(seed)
         self.reset()
 
     def reset(self):

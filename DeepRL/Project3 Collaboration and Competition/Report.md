@@ -1,6 +1,6 @@
 [//]: # (Image References)
 
-[image1]: Scores_attempt_at_5500.jpg  'Agent after 5500 episodes'
+[image1]: Scores_attempt_at_7000.jpg  'Agent after 5500 episodes'
 
 
 # A Multi-Agent Deep Learning collaborative approach to play Tennis
@@ -76,10 +76,10 @@ The multiagent class follows the algorithm in the appendix of the MADDPG paper r
 ### 4. Tuning
 Finding the optimal parameters proved to be quite tricky. Not only there are a large number of parameters to tune, but
 also a particular combination of parameters may need to be retested in order to get an accurate assessment of the
-performance. Interestingly enough, and similar to single agent DDPG, many times **early indicators of performance were not informative of future performance**. As one can see by the python notebook, we were able to arrive to an average score of 0.98, but the performance is unstable and drops after Epsiode 5000.
+performance. Interestingly enough, and similar to single agent DDPG, many times **early indicators of performance were not informative of future performance**. As one can see by the python notebook, we were able to arrive to an average score of 1.29 at episode 6750. There is no evidence of singifcant performance detreoration, as can be seen by the following chart.
 
   
-![Agent performance over 5500 episodes][image1]
+![Agent performance over 7000 episodes][image1]
 
 The parameters used were:
 - Noise: Standard deviation of 0.2 , expectation of 0, and theta of 0.15, using a standard normal distribution as noise generator. A further 0.99 decay factor was used in each episode.
