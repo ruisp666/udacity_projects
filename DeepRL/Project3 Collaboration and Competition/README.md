@@ -69,7 +69,7 @@ Before running code in a notebook, change the kernel to match the "deep rl (torc
 
 ### Instructions
 
-Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
+Follow the instructions in `Tennis_Solution.ipynb` to get started with training your own agent!  
 
 ### (Optional) Challenge: Crawler Environment
 
