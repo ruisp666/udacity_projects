@@ -21,7 +21,7 @@ def loss_actor(output, target):
     return (target - output)**2
         
 def policy(states, vector_agent):
-     """
+    """
     Policy to be used for a single agent
     PARAMS
     =====
@@ -39,7 +39,7 @@ class MultiAgent():
     Implements the members of the MultiAgent class for MADDPG
     """
     def __init__ (self, n_agents, state_size, action_size, seed):
-               """
+        """
         Initializes a MultiAgent object
 
         PARAMS
@@ -167,9 +167,9 @@ class MultiAgent():
             agent.optim_actor.step()
             
     def update(self):
-         """
-         Update the target networks
-         """ 
+        """
+        Update the target networks
+        """ 
         for agent in self.agents:
             agent.soft_update(agent.actor_local, agent.actor_target, TAU)
             agent.soft_update(agent.critic_local, agent.critic_target, TAU)
