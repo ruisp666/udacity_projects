@@ -65,13 +65,11 @@ I used jupyterlab, which supports multi-tab editing, and includes a markdown pre
 python -m ipykernel install --user --name drlnd --display-name "deep rl (torch)"
 Before running code in a notebook, change the kernel to match the "deep rl (torch)" environment by using the drop-down Kernel menu.
 
-![Kernel change][image2]
-
 ### Instructions
 
 Follow the instructions in `Tennis_Solution.ipynb` to get started with training your own agent!  
 
-### (Optional) Challenge: Crawler Environment
+### (Optional) Challenge: Soccer Environment
 
 After you have successfully completed the project, you might like to solve the more difficult **Soccer** environment.
 
